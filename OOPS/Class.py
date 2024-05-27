@@ -84,3 +84,36 @@ acc1.debit(3000)
 acc1.credit(5000)
 
 
+# practice question - Calculate area of triangle
+class Triangle:
+    def __init__(self,a,b,c):
+        self.a = a
+        self.b = b
+        self.c = c
+        
+    def istriangle(self):
+        s1 = self.a
+        s2 = self.b
+        s3 = self.c
+        if s1+s2>s3 and s2+s3>s1 and s1+s3>s2:
+            tr = True
+        else:
+            tr = False
+            print('given sides do not form a triangle')
+        return tr
+    
+        
+    def perimeter(self):
+        if self.istriangle()==True:
+            p = self.a+self.b+self.c
+        else:
+            p = None
+        return p
+    
+    def area(self):
+        if self.istriangle()==True:
+            s = (self.a+self.b+self.c)/2
+            ar = (s*(s-self.a)*(s-self.b)*(s-self.c))**(1/2)
+        else:
+            ar = None
+        return ar
